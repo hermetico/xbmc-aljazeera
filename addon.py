@@ -124,7 +124,8 @@ def show_homepage():
 def watch_live():
     rtmpurl = 'rtmp://aljazeeraflashlivefs.fplive.net:443/aljazeeraflashlive-live?videoId=883816736001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId=/aljazeera_eng_med?videoId=883816736001&lineUpId=&pubId=665003303001&playerId=751182905001&affiliateId= live=true'
     li = xbmcgui.ListItem('AlJazeera Live')
-    xbmc.Player(xbmc.PLAYER_CORE_DVDPLAYER).play(rtmpurl, li)
+    # Kodi decides which player uses: http://forum.kodi.tv/showthread.php?tid=173887&pid=1516662#pid1516662
+    xbmc.Player().play(rtmpurl, li)
     # Return an empty list so we can test with plugin.crawl() and
     # plugin.interactive()
     return []
